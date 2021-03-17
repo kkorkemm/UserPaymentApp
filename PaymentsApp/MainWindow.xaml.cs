@@ -37,7 +37,7 @@ namespace PaymentsApp
 
         private void ImportPayments()
         {
-            var dataFile = File.ReadAllLines(@"C:\C#\UserApp\данные для импорта\payments.txt");
+            var dataFile = File.ReadAllLines(@"C:\C#\UserPaymentApp\данные для импорта\payments.txt");
 
             foreach (var line in dataFile)
             {
