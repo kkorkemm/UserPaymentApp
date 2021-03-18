@@ -21,6 +21,11 @@ namespace PaymentsApp
     {
         private Payment currentPayment = new Payment();
 
+        /// <summary>
+        /// Вызов окна добавления и редактирования платежей
+        /// Если в качестве аргумента был передан null, тогда добавляется новый платеж
+        /// Иначе редактируется существующий
+        /// </summary>
         public AddEditWindow(Payment selectedItem)
         {
             InitializeComponent();
@@ -33,6 +38,11 @@ namespace PaymentsApp
             ComboTypes.ItemsSource = UserPaymentsDBEntities.GetContext().PaymentType.ToList();
         }
 
+        /// <summary>
+        /// Добавление платежа. Проверка на корректность введенных данных
+        /// При наличии ошибок появляется окно с их описанием
+        /// При отсутствии ошибок новый платеж добавлятся в контекст данных
+        /// </summary>
         private void BtnAddPayment_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
@@ -78,6 +88,9 @@ namespace PaymentsApp
             }
         }
 
+        /// <summary>
+        /// Отмена добавления
+        /// </summary>
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();

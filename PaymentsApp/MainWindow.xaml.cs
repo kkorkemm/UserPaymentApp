@@ -35,6 +35,9 @@ namespace PaymentsApp
             // ImportPayments();
         }
 
+        /// <summary>
+        /// Импорт данных о платежах в базу данных (уже импортированы)
+        /// </summary>
         private void ImportPayments()
         {
             var dataFile = File.ReadAllLines(@"C:\C#\UserPaymentApp\данные для импорта\payments.txt");
@@ -66,6 +69,9 @@ namespace PaymentsApp
             }
         }
 
+        /// <summary>
+        /// Добавление нового платежа
+        /// </summary>
         private void BtnAddPay_Click(object sender, RoutedEventArgs e)
         {
             var addWindow = new AddEditWindow(null);
@@ -73,6 +79,9 @@ namespace PaymentsApp
             addWindow.Show();
         }
 
+        /// <summary>
+        /// Редактирование существующего платежа
+        /// </summary>
         private void BtnEditPay_Click(object sender, RoutedEventArgs e)
         {
             var editWindow = new AddEditWindow((sender as Button).DataContext as Payment);
@@ -81,6 +90,9 @@ namespace PaymentsApp
             editWindow.Show();
         }
 
+        /// <summary>
+        /// Удаление платежей
+        /// </summary>
         private void BtnDeletePay_Click(object sender, RoutedEventArgs e)
         {
             var removingPayments = DGridPayments.SelectedItems.Cast<Payment>().ToList();
@@ -129,6 +141,9 @@ namespace PaymentsApp
             }
         }
 
+        /// <summary>
+        /// Фильтрация по дате и категории платежей
+        /// </summary>
         private void UpdatePayments()
         {
             var currentPayments = UserPaymentsDBEntities.GetContext().Payment.ToList();
@@ -174,13 +189,27 @@ namespace PaymentsApp
             UpdatePayments();
         }
 
+        /// <summary>
+        /// Выход из кабинета пользователя (Кнопка Выйти)
+        /// </summary>
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow login = new LoginWindow();
             login.Show();
             Hide();
         }
+        
+        /// <summary>
+        /// Кнопка Обновить таблицу
+        /// </summary>
+        private void BtnUpdateGrid_Click(object sender, RoutedEventArgs e)
+        {
+            DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList();
+        }
 
+        /// <summary>
+        /// При нажатии на крестик (закрытие)
+        /// </summary>
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();

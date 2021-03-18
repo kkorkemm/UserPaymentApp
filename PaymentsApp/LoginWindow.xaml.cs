@@ -28,6 +28,9 @@ namespace PaymentsApp
             ComboLogin.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Проверка логина и пароля
+        /// </summary>
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             if (ComboLogin.SelectedItem is User currentUser)
@@ -50,6 +53,9 @@ namespace PaymentsApp
             }
         }
 
+        /// <summary>
+        /// Выход из приложения
+        /// </summary>
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

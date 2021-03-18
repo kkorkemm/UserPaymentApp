@@ -105,13 +105,28 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="2"
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BtnUpdateGrid"
+                    Click="BtnUpdateGrid_Click"
+                    Content="Обновить таблицу"
+                    Width="200"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"/>
+
+            <Button Grid.Column="2"
                 x:Name="BtnExit"
                 Click="BtnExit_Click"
                 Content="Выйти"
                 Width="200"
                 Margin="10"
-                HorizontalAlignment="Right"/>
+                HorizontalAlignment="Left"/>
+        </Grid>
         
     </Grid>
 </Window>
