@@ -21,9 +21,13 @@ namespace PaymentsApp
     {
         private Payment currentPayment = new Payment();
 
-        public AddEditWindow()
+        public AddEditWindow(Payment selectedItem)
         {
             InitializeComponent();
+
+            if (selectedItem != null)
+                currentPayment = selectedItem;
+
             DataContext = currentPayment;
 
             ComboTypes.ItemsSource = UserPaymentsDBEntities.GetContext().PaymentType.ToList();
@@ -71,9 +75,7 @@ namespace PaymentsApp
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
-
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

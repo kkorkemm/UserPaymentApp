@@ -77,7 +77,8 @@
                   IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Оплачено"
-                                        IsReadOnly="False"/>
+                                        IsReadOnly="False"
+                                        Binding="{Binding IsPayed}"/>
                 <DataGridTextColumn Header="Наименование платежа"
                                     Width="4*"
                                     Binding="{Binding PaymentName}"/>
@@ -95,6 +96,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="BtnEditPay"
+                                    Click="BtnEditPay_Click"
                                     Content="Редактировать"
                                     Style="{StaticResource MaterialDesignFlatButton}"/>
                         </DataTemplate>

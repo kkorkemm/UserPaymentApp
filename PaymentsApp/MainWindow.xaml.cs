@@ -68,14 +68,65 @@ namespace PaymentsApp
 
         private void BtnAddPay_Click(object sender, RoutedEventArgs e)
         {
-            var addWindow = new AddEditWindow();
+            var addWindow = new AddEditWindow(null);
             addWindow.Title = "Добавление платежа";
             addWindow.Show();
         }
 
+        private void BtnEditPay_Click(object sender, RoutedEventArgs e)
+        {
+            var editWindow = new AddEditWindow((sender as Button).DataContext as Payment);
+            editWindow.Title = "Редактирование платежа";
+            editWindow.BtnAddPayment.Content = "Сохранить";
+            editWindow.Show();
+        }
+
         private void BtnDeletePay_Click(object sender, RoutedEventArgs e)
         {
+            var removingPayments = DGridPayments.SelectedItems.Cast<Payment>().ToList();
 
+            if (removingPayments.Count == 0)
+            {
+                MessageBox.Show("Выберите элементы для удаления");
+            }
+
+            else
+            {
+                string message = "";
+                switch (removingPayments.Count % 10)
+                {
+                    case 0:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9: message = $"Вы точно хотите удалить следующие {removingPayments.Count} элементов?";
+                        break;
+                    case 2:
+                    case 3:
+                    case 4: message = $"Вы точно хотите удалить следующие {removingPayments.Count} элемента?"; break;
+                    case 1: message = $"Вы точно хотите удалить {removingPayments.Count} элемент?"; break;
+                }
+
+                MessageBoxResult result = MessageBox.Show(message, "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        UserPaymentsDBEntities.GetContext().Payment.RemoveRange(removingPayments);
+                        UserPaymentsDBEntities.GetContext().SaveChanges();
+
+                        MessageBox.Show("Данные успешно удалены!");
+
+                        DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
 
         private void UpdatePayments()
