@@ -6,11 +6,13 @@
         xmlns:local="clr-namespace:PaymentsApp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1020">
+        Title="MainWindow" Height="500" Width="1020"
+        Closed="Window_Closed">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Grid Background="#eee"/>
@@ -77,14 +79,15 @@
                 <DataGridCheckBoxColumn Header="Оплачено"
                                         IsReadOnly="False"/>
                 <DataGridTextColumn Header="Наименование платежа"
-                                    Width="5*"
+                                    Width="4*"
                                     Binding="{Binding PaymentName}"/>
                 <DataGridTextColumn Header="Количество"
                                     Binding="{Binding Count}"/>
                 <DataGridTextColumn Header="Цена"
                                     Binding="{Binding Price}"/>
                 <DataGridTextColumn Header="Сумма"
-                                    Width="2*"/>
+                                    Width="3*"
+                                    Binding="{Binding Summ}"/>
                 <DataGridTextColumn Header="Категория"
                                     Width="4*"
                                     Binding="{Binding PaymentType.PaymentName}"/>
@@ -99,7 +102,14 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        
+
+        <Button Grid.Row="2"
+                x:Name="BtnExit"
+                Click="BtnExit_Click"
+                Content="Выйти"
+                Width="200"
+                Margin="10"
+                HorizontalAlignment="Right"/>
         
     </Grid>
 </Window>

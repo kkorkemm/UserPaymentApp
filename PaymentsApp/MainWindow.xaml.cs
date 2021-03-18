@@ -68,7 +68,9 @@ namespace PaymentsApp
 
         private void BtnAddPay_Click(object sender, RoutedEventArgs e)
         {
-
+            var addWindow = new AddEditWindow();
+            addWindow.Title = "Добавление платежа";
+            addWindow.Show();
         }
 
         private void BtnDeletePay_Click(object sender, RoutedEventArgs e)
@@ -76,19 +78,61 @@ namespace PaymentsApp
 
         }
 
+        private void UpdatePayments()
+        {
+            var currentPayments = UserPaymentsDBEntities.GetContext().Payment.ToList();
+
+            if (datePicker.SelectedDate != null && datePicker2.SelectedDate == null)
+            {
+                currentPayments = currentPayments.Where(i => i.PaymentDate >= datePicker.SelectedDate.Value).ToList();
+            }
+
+            if (datePicker.SelectedDate == null && datePicker2.SelectedDate != null)
+            {
+                currentPayments = currentPayments.Where(i => i.PaymentDate <= datePicker2.SelectedDate.Value).ToList();
+            }
+
+            if (datePicker.SelectedDate != null && datePicker2.SelectedDate != null
+                && datePicker.SelectedDate.Value <= datePicker2.SelectedDate.Value)
+            {
+                currentPayments = currentPayments.Where(i => i.PaymentDate >= datePicker.SelectedDate.Value
+                && i.PaymentDate <= datePicker2.SelectedDate.Value).ToList();
+            }
+
+            if (ComboTypes.SelectedIndex > 0)
+            {
+                currentPayments = currentPayments.Where(i => i.PaymentType == ComboTypes.SelectedItem as PaymentType).ToList();
+            }
+
+            DGridPayments.ItemsSource = currentPayments.ToList();
+               
+        }
+
         private void datePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            UpdatePayments();
         }
 
         private void datePicker2_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            UpdatePayments();
         }
 
         private void ComboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            UpdatePayments();
+        }
 
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            Hide();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

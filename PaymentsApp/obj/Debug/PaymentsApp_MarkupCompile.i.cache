@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\C#\PaymentsApp\PaymentsApp\obj\Debug\
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\
 PaymentsApp
 none
 false
 DEBUG;TRACE
-C:\C#\PaymentsApp\PaymentsApp\App.xaml
-11151548125
+C:\C#\UserPaymentApp\PaymentsApp\App.xaml
+31016544776
 2-967514586
-13-410166789
-201069887013
-MainWindow.xaml;
+15158953186
+20667144007
+AddEditWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
 
-False
+True
 

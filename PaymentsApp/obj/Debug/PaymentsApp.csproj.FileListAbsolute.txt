@@ -54,3 +54,7 @@ C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentsApp.csproj.CoreCompileInputs.
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentsApp.csproj.CopyComplete
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentsApp.exe
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentsApp.pdb
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginWindow.g.cs
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginWindow.baml
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AddEditWindow.g.cs
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AddEditWindow.baml

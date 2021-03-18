@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\C#\UserPaymentApp\PaymentsApp\App.xaml
-11151548125
+31016544776
 2-967514586
-12432192578
+141001312553
 20667144007
-MainWindow.xaml;
+AddEditWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
 
 False
 

@@ -22,7 +22,9 @@ namespace PaymentsApp
         public int Count { get; set; }
         public decimal Price { get; set; }
         public bool IsPayed { get; set; }
-    
+
+        public string Summ => (Price * Count).ToString("N2");
+
         public virtual PaymentType PaymentType { get; set; }
         public virtual User User { get; set; }
     }
