@@ -28,6 +28,8 @@ namespace PaymentsApp
             return context;
         }
 
+        public static UserPaymentsDBEntities CurrentUser;
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

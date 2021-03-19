@@ -77,7 +77,6 @@
                   IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Оплачено"
-                                        IsReadOnly="False"
                                         Binding="{Binding IsPayed}"/>
                 <DataGridTextColumn Header="Наименование платежа"
                                     Width="4*"

@@ -25,7 +25,6 @@ namespace PaymentsApp
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             ComboLogin.ItemsSource = UserPaymentsDBEntities.GetContext().User.ToList();
-            ComboLogin.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -57,6 +56,14 @@ namespace PaymentsApp
         /// Выход из приложения
         /// </summary>
         private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        /// <summary>
+        /// При нажатии на крестик (закрытие приложения)
+        /// </summary>
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
         }
