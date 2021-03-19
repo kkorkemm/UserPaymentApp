@@ -36,6 +36,7 @@ namespace PaymentsApp
             {
                 if (TextPassword.Password == currentUser.Password)
                 {
+
                     var paymentWindow = new MainWindow
                     {
                         Owner = this,
