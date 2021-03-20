@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PaymentsApp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1020"
+        Title="Платежи" Height="500" Width="1020"
         Closed="Window_Closed">
     <Grid>
         <Grid.RowDefinitions>

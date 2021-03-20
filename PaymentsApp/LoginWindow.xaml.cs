@@ -36,13 +36,14 @@ namespace PaymentsApp
             {
                 if (TextPassword.Password == currentUser.Password)
                 {
-
+                    UserPaymentsDBEntities.GetCurrentUserId(currentUser.ID);
                     var paymentWindow = new MainWindow
                     {
                         Owner = this,
                         WindowStartupLocation = WindowStartupLocation.CenterScreen
                     };
                     paymentWindow.Show();
+                    paymentWindow.Title = currentUser.FIO;
                     Hide();
                 }
 

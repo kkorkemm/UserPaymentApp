@@ -25,7 +25,7 @@ namespace PaymentsApp
         {
             InitializeComponent();
 
-            DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList();
+            DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList().Where(p => p.UserID == UserPaymentsDBEntities.CurrentUserID);
 
             var types = UserPaymentsDBEntities.GetContext().PaymentType.ToList();
             types.Insert(0, new PaymentType { PaymentName = "Все категории" });
@@ -131,7 +131,7 @@ namespace PaymentsApp
 
                         MessageBox.Show("Данные успешно удалены!");
 
-                        DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList();
+                        DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList().Where(p => p.UserID == UserPaymentsDBEntities.CurrentUserID);
                     }
                     catch (Exception ex)
                     {
@@ -146,7 +146,7 @@ namespace PaymentsApp
         /// </summary>
         private void UpdatePayments()
         {
-            var currentPayments = UserPaymentsDBEntities.GetContext().Payment.ToList();
+            var currentPayments = UserPaymentsDBEntities.GetContext().Payment.ToList().Where(p => p.UserID == UserPaymentsDBEntities.CurrentUserID);
 
             if (datePicker.SelectedDate != null && datePicker2.SelectedDate == null)
             {
@@ -204,7 +204,7 @@ namespace PaymentsApp
         /// </summary>
         private void BtnUpdateGrid_Click(object sender, RoutedEventArgs e)
         {
-            DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList();
+            DGridPayments.ItemsSource = UserPaymentsDBEntities.GetContext().Payment.ToList().Where(p => p.UserID == UserPaymentsDBEntities.CurrentUserID);
         }
 
         /// <summary>

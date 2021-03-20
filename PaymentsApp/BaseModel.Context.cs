@@ -28,7 +28,11 @@ namespace PaymentsApp
             return context;
         }
 
-        public UserPaymentsDBEntities CurrentUser;
+        public static int CurrentUserID { get; set; }
+        public static void GetCurrentUserId(int id)
+        {
+            CurrentUserID = id;
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

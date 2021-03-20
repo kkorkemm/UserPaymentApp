@@ -62,7 +62,7 @@ namespace PaymentsApp
                 currentPayment.IsPayed = false;
 
             currentPayment.PaymentDate = DateTime.Now;
-            currentPayment.UserID = 7;
+            currentPayment.UserID = UserPaymentsDBEntities.CurrentUserID;
 
 
             if (errors.Length > 0)
