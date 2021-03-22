@@ -208,6 +208,17 @@ namespace PaymentsApp
         }
 
         /// <summary>
+        /// Получить диаграмму расходов
+        /// </summary>
+        private void BtnGetDiagramm_Click(object sender, RoutedEventArgs e)
+        {
+
+            PaymentDiagramm paymentDiagramm = new PaymentDiagramm();
+            paymentDiagramm.Title += UserPaymentsDBEntities.CurrentUserName;
+            paymentDiagramm.Show();
+        }
+
+        /// <summary>
         /// При нажатии на крестик (закрытие)
         /// </summary>
         private void Window_Closed(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace PaymentsApp
             {
                 if (TextPassword.Password == currentUser.Password)
                 {
-                    UserPaymentsDBEntities.GetCurrentUserId(currentUser.ID);
+                    UserPaymentsDBEntities.CurrentUserID = currentUser.ID; 
                     var paymentWindow = new MainWindow
                     {
                         Owner = this,

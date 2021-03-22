@@ -21,6 +21,8 @@ namespace PaymentsApp
         }
 
         private static UserPaymentsDBEntities context;
+
+        // паттерн Singleton
         public static UserPaymentsDBEntities GetContext()
         {
             if (context == null)
@@ -29,10 +31,7 @@ namespace PaymentsApp
         }
 
         public static int CurrentUserID { get; set; }
-        public static void GetCurrentUserId(int id)
-        {
-            CurrentUserID = id;
-        }
+        public static string CurrentUserName { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -109,22 +109,31 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Button x:Name="BtnUpdateGrid"
                     Click="BtnUpdateGrid_Click"
                     Content="Обновить таблицу"
                     Width="200"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Center"
                     Style="{StaticResource MaterialDesignOutlinedButton}"/>
 
-            <Button Grid.Column="2"
+            <Button Grid.Column="2" 
+                    x:Name="BtnGetDiagramm"
+                    Click="BtnGetDiagramm_Click"
+                    Content="Получить график расходов"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"/>
+
+            <Button Grid.Column="5"
                 x:Name="BtnExit"
                 Click="BtnExit_Click"
                 Content="Выйти"
                 Width="200"
                 Margin="10"
-                HorizontalAlignment="Left"/>
+                HorizontalAlignment="Center"/>
         </Grid>
         
     </Grid>

@@ -58,3 +58,11 @@ C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginWindow.g.cs
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginWindow.baml
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AddEditWindow.g.cs
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AddEditWindow.baml
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginPage.g.cs
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginRegist.g.cs
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\RegistrationPage.g.cs
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginPage.baml
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\LoginRegist.baml
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\RegistrationPage.baml
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentDiagramm.g.cs
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentDiagramm.baml
