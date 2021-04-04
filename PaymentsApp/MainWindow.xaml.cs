@@ -74,8 +74,10 @@ namespace PaymentsApp
         /// </summary>
         private void BtnAddPay_Click(object sender, RoutedEventArgs e)
         {
-            var addWindow = new AddEditWindow(null);
-            addWindow.Title = "Добавление платежа";
+            var addWindow = new AddEditWindow(null)
+            {
+                Title = "Добавление платежа"
+            };
             addWindow.Show();
         }
 
@@ -194,7 +196,7 @@ namespace PaymentsApp
         /// </summary>
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow login = new LoginWindow();
+            LoginRegist login = new LoginRegist();
             login.Show();
             Hide();
         }

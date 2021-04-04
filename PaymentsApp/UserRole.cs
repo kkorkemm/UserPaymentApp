@@ -12,23 +12,18 @@ namespace PaymentsApp
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class UserRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public UserRole()
         {
-            this.Payment = new HashSet<Payment>();
+            this.User = new HashSet<User>();
         }
     
-        public int ID { get; set; }
-        public string FIO { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string PIN { get; set; }
-        public int RoleID { get; set; }
+        public int UserRole1 { get; set; }
+        public string RoleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Payment> Payment { get; set; }
-        public virtual UserRole UserRole { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }

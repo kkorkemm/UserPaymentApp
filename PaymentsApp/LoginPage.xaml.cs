@@ -24,9 +24,7 @@ namespace PaymentsApp
         {
             InitializeComponent();
             
-            var users = UserPaymentsDBEntities.GetContext().User.ToList();
-            users.Insert(0, new User { FIO = "Администратор" });
-            ComboLogin.ItemsSource = users;
+            ComboLogin.ItemsSource = UserPaymentsDBEntities.GetContext().User.ToList().OrderBy(p => p.FIO);
         }
 
         /// <summary>
@@ -42,31 +40,40 @@ namespace PaymentsApp
         /// </summary>
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (ComboLogin.SelectedIndex == 0 && TextPassword.Password == "admin")
+            if (ComboLogin.SelectedItem is User currentUser)
             {
-                MessageBox.Show("Ghbdn!");
-            }
-            else
-            {
-                if (ComboLogin.SelectedItem is User currentUser)
+                if (TextPassword.Password == currentUser.Password)
                 {
-                    if (TextPassword.Password == currentUser.Password)
+                    UserPaymentsDBEntities.CurrentUserID = currentUser.ID;
+                    UserPaymentsDBEntities.CurrentUserName = currentUser.FIO;
+                    UserPaymentsDBEntities.CurrentUserRole = currentUser.RoleID;
+
+                    if (currentUser.RoleID == 1)
                     {
-                        UserPaymentsDBEntities.CurrentUserID = currentUser.ID;
-                        UserPaymentsDBEntities.CurrentUserName = currentUser.FIO;
+                        AdminWindow adminWindow = new AdminWindow
+                        {
+                            Title = currentUser.FIO,
+                            WindowStartupLocation = WindowStartupLocation.CenterScreen
+                        };
+                        adminWindow.Show();
+                    }
+
+                    else
+                    {
                         MainWindow paymentWindow = new MainWindow
                         {
                             Title = currentUser.FIO,
                             WindowStartupLocation = WindowStartupLocation.CenterScreen
                         };
                         paymentWindow.Show();
-                        Application.Current.MainWindow.Close(); // закрытие окна регистрации
                     }
 
-                    else
-                    {
-                        MessageBox.Show("Неверный пароль", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    Application.Current.MainWindow.Close(); // закрытие окна регистрации
+                }
+
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

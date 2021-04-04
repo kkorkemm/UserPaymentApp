@@ -6,6 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        
         xmlns:local="clr-namespace:PaymentsApp"
         mc:Ignorable="d"
         Title="График расходов: " Height="450" Width="800">
@@ -16,19 +17,38 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="ComboChartTypes"
-                  materialDesign:HintAssist.Hint="Выберите тип графика"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ComboBox x:Name="ComboUsers"
+                  materialDesign:HintAssist.Hint="Выберите пользователя"
+                      DisplayMemberPath="FIO"
                   SelectionChanged="ComboChartTypes_SelectionChanged"
                   Margin="20"
                   HorizontalAlignment="Center"
                   Width="250"/>
 
+            <ComboBox x:Name="ComboChartTypes"
+                      Grid.Column="1"
+                  materialDesign:HintAssist.Hint="Выберите тип графика"
+                  SelectionChanged="ComboChartTypes_SelectionChanged"
+                  Margin="20"
+                  HorizontalAlignment="Center"
+                  Width="250"/>
+        </Grid>
+
+        <!-- Для расположения элементов Windows Forms -->
         <WindowsFormsHost Grid.Row="1">
+            
             <charts:Chart x:Name="PaymentChart">
                 <charts:Chart.Legends>
                     <charts:Legend></charts:Legend>
                 </charts:Chart.Legends>
             </charts:Chart>
+            
         </WindowsFormsHost>
 
 

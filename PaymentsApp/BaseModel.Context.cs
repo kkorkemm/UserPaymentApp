@@ -32,6 +32,7 @@ namespace PaymentsApp
 
         public static int CurrentUserID { get; set; }
         public static string CurrentUserName { get; set; }
+        public static int CurrentUserRole { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,5 +43,6 @@ namespace PaymentsApp
         public virtual DbSet<PaymentType> PaymentType { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
     }
 }

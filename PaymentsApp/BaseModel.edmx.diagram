@@ -11,6 +11,8 @@
         <EntityTypeShape EntityType="UserPaymentsDBModel.User" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="UserPaymentsDBModel.FK_Payment_PaymentType" ManuallyRouted="false" />
         <AssociationConnector Association="UserPaymentsDBModel.FK_Payment_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UserPaymentsDBModel.UserRole" Width="1.5" PointX="0.75" PointY="8.875" />
+        <AssociationConnector Association="UserPaymentsDBModel.FK_User_UserRole" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

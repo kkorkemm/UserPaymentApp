@@ -32,10 +32,18 @@ namespace PaymentsApp
             PaymentChart.Series.Add(currentSeries);
 
             ComboChartTypes.ItemsSource = Enum.GetValues(typeof(SeriesChartType));
+            ComboUsers.ItemsSource = UserPaymentsDBEntities.GetContext().User.ToList().Where(p => p.RoleID != 1);
+
+            if (UserPaymentsDBEntities.CurrentUserRole != 1)
+            {
+                ComboUsers.ItemsSource = UserPaymentsDBEntities.GetContext().User.Where(p => p.ID == UserPaymentsDBEntities.CurrentUserID).ToList();
+                ComboUsers.SelectedIndex = 0;
+                ComboUsers.IsEnabled = false;
+            }
         }
 
         /// <summary>
-        /// Вывод диаграмма по мере выбора типа
+        /// Вывод диаграммы по мере выбора типа
         /// </summary>
         private void ComboChartTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -49,7 +57,7 @@ namespace PaymentsApp
       
                 foreach (var category in categories)
                 {
-                    currentSeries.Points.AddXY(category.PaymentName, UserPaymentsDBEntities.GetContext().Payment.ToList().Where(p => p.PaymentType == category && p.UserID == UserPaymentsDBEntities.CurrentUserID).Sum(p => p.Price * p.Count));
+                    currentSeries.Points.AddXY(category.PaymentName, UserPaymentsDBEntities.GetContext().Payment.ToList().Where(p => p.PaymentType == category && p.User == ComboUsers.SelectedItem).Sum(p => p.Price * p.Count));
                 }
             }
         }

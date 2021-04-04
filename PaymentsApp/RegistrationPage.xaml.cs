@@ -58,6 +58,7 @@ namespace PaymentsApp
             if (errors.Length == 0)
             {
                 newUser.Password = TextPass.Password;
+                newUser.RoleID = 2;
 
                 if (newUser.ID == 0)
                     UserPaymentsDBEntities.GetContext().User.Add(newUser);

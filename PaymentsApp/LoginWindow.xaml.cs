@@ -15,6 +15,12 @@ using System.Windows.Shapes;
 namespace PaymentsApp
 {
     /// <summary>
+    /// 
+    ///  СТАРАЯ ВЕРСИЯ!!!
+    /// 
+    /// </summary>
+
+    /// <summary>
     /// Логика взаимодействия для LoginWindow.xaml
     /// </summary>
     public partial class LoginWindow : Window

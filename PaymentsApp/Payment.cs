@@ -11,7 +11,7 @@ namespace PaymentsApp
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Payment
     {
         public int ID { get; set; }
@@ -24,7 +24,7 @@ namespace PaymentsApp
         public bool IsPayed { get; set; }
 
         public string Summ => (Price * Count).ToString("N2");
-
+    
         public virtual PaymentType PaymentType { get; set; }
         public virtual User User { get; set; }
     }
