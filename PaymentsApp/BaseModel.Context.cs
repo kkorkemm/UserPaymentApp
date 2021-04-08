@@ -20,8 +20,8 @@ namespace PaymentsApp
         {
         }
 
-        private static UserPaymentsDBEntities context;
 
+        private static UserPaymentsDBEntities context;
         // паттерн Singleton
         public static UserPaymentsDBEntities GetContext()
         {

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\C#\UserPaymentApp\PaymentsApp\App.xaml
-9556465228
+10-1086028573
 2-967514586
-22-586251463
+23190242016
 27-270482912
-AddEditWindow.xaml;AdminUsersPage.xaml;AdminWindow.xaml;LoginPage.xaml;LoginRegist.xaml;LoginWindow.xaml;MainWindow.xaml;PaymentDiagramm.xaml;RegistrationPage.xaml;
+AddEditWindow.xaml;AdminEditUserWindow.xaml;AdminUsersPage.xaml;AdminWindow.xaml;LoginPage.xaml;LoginRegist.xaml;LoginWindow.xaml;MainWindow.xaml;PaymentDiagramm.xaml;RegistrationPage.xaml;
 
 False
 

@@ -61,7 +61,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Payment_User">
-    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="User">
@@ -73,7 +75,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_User_UserRole">
-    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserRole">
