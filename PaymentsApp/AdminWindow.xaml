@@ -27,7 +27,9 @@
                     Margin="0 0 10 0"
                     Style="{StaticResource MaterialDesignOutlinedButton}"
                     Click="BtnExcel_Click"/>
-            <Button Content="Экспорт данных в Word"
+            <Button x:Name="BtnWord" 
+                    Content="Экспорт данных в Word"
+                    Click="BtnWord_Click"
                     Style="{StaticResource MaterialDesignOutlinedButton}"/>
             <Button x:Name="BtnExit"
                     Click="BtnExit_Click"

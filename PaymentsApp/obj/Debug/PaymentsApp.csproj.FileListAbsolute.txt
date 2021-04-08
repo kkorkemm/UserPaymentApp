@@ -70,3 +70,4 @@ C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AdminWindow.g.cs
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AdminWindow.baml
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AdminUsersPage.g.cs
 C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\AdminUsersPage.baml
+C:\C#\UserPaymentApp\PaymentsApp\obj\Debug\PaymentsApp.csproj.ResolveComReference.cache
